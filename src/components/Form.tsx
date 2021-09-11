@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
+import { Search } from '../App'
 import Error from './Error'
 
-const Form = () => {
 
-    const [search, setSearch] = useState({
-        city: '',
-        country: ''
-    })
+type FormProps = {
+    search: Search,
+    setSearch: any,
+    setConsult: any
+}
 
-    const [error, setError] = useState(false)
+const Form = (props: FormProps) => {
+
+    const { search, setSearch, setConsult } = props
 
     const { city, country } = search
+
+    const [error, setError] = useState(false)
 
     const handleChange = (e: any) => {
         setSearch({
@@ -27,6 +32,7 @@ const Form = () => {
             return;
         }
         setError(false)
+        setConsult(true)
     }
 
     return (
