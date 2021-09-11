@@ -31,7 +31,7 @@ const Form = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            {error && <Error text='Todos los campos son obligatorioss' /> }
+            {error && <Error text='Todos los campos son obligatorioss' />}
             <div className='input-field col s12'>
                 <input
                     type='text'
