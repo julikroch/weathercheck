@@ -10,6 +10,14 @@ export type Search = {
   country: string
 }
 
+export type Result = {
+  main: {
+    temp_min: number,
+    temp_max: number
+  },
+  name: string
+}
+
 function App() {
 
   const [search, setSearch] = useState<Search>({
@@ -18,7 +26,7 @@ function App() {
   })
 
   const [consult, setConsult] = useState(false)
-  const [result, setResult] = useState({})
+  const [result, setResult] = useState<Result | undefined>()
 
   const { city, country } = search
 
@@ -30,14 +38,14 @@ function App() {
         const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${appKey}`;
 
         const response = await fetch(url)
-        const result = response.json()
-        console.log(result)
+        const result = await response.json()
         setResult(result)
+        console.log(result)
       }
     }
 
     apiCall()
-  }, [consult, city, country])
+  }, [consult])
 
   return (
     <Fragment>
@@ -49,7 +57,7 @@ function App() {
             <Form search={search} setSearch={setSearch} setConsult={setConsult} />
           </div>
           <div className="col m6 s12">
-            <Weather />
+            <Weather result={result} />
           </div>
         </div>
       </div>

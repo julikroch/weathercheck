@@ -1,10 +1,16 @@
-import React from 'react'
+import { Result } from "../App"
 
-const Weather = () => {
+type WeatherProps = {
+    result?: Result
+}
+
+const Weather = ({ result }: WeatherProps) => {
+
     return (
         <div className="card-panel white col s12">
             <div className="black-text">
-                <h2>El clima es</h2>
+                <h2>El clima es {result?.name}</h2>
+                <span>{result?.main.temp_max}</span>
             </div>
         </div>
     )

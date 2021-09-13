@@ -37,7 +37,7 @@ const Form = (props: FormProps) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            {error && <Error text='Todos los campos son obligatorioss' />}
+            {error && <Error text='Todos los campos son obligatorios' />}
             <div className='input-field col s12'>
                 <input
                     type='text'
@@ -75,7 +75,7 @@ const Form = (props: FormProps) => {
                     className='waves-effect waves-light btn-large btn-block yellow accent-4'
                 />
             </div>
-        </form >
+        </form>
     )
 }
 

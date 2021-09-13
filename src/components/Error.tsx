@@ -1,10 +1,10 @@
-interface ErrorProps {
+type ErrorProps = {
     text: string
 }
-const Error = (props: ErrorProps) => {
+const Error = ({ text }: ErrorProps) => {
     return (
         <div>
-            <p className="red darken-4 error"> {props.text}</p>
+            <p className="red darken-4 error"> {text}</p>
         </div>
     )
 }
