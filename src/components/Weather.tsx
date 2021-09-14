@@ -8,14 +8,14 @@ const Weather = ({ result }: WeatherProps) => {
 
     if (!result?.name) return null
 
-    const { main } = result
+    const { main, name } = result
     const { temp, temp_min, temp_max } = main
     const kelvin: number = 273.15;
-    
+
     return (
         <div className='card-panel white col s12'>
             <div className='black-text'>
-                <h2>The weather in {result?.name} is</h2>
+                <h2>The weather in {name} is</h2>
                 <p className='temperature'>
                     {(temp - kelvin).toFixed(1)} <span> &#x2103;</span>
                 </p>
