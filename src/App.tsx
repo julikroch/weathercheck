@@ -54,8 +54,7 @@ function App() {
 
   return (
     <Fragment>
-      <Header title='Clima React App' />
-
+      <Header title='React Weather App' />
       <div className='form-container'>
         <div className='row'>
           <div className='col m6 s12'>
