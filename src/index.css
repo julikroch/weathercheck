@@ -53,6 +53,9 @@ input[type="text"]:not(.browser-default):focus:not([readonly]) + label {
   text-align: center;
   text-emphasis: left;
 }
+.card-panel{
+  border-radius: 10px;
+}
 .card-panel h2 {
   font-size: 1.6rem;
   text-align: center;
