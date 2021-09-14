@@ -27,7 +27,7 @@ const Form = (props: FormProps) => {
     const handleSubmit = (e: any) => {
         e.preventDefault()
 
-        if (city.trim() === "" || country.trim() === "") {
+        if (city.trim() === '' || country.trim() === '') {
             setError(true)
             return;
         }

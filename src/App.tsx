@@ -45,7 +45,7 @@ function App() {
         setResult(result)
         setConsult(false)
 
-        result?.cod === "404" ? setError(true) : setError(false)
+        result?.cod === '404' ? setError(true) : setError(false)
       }
     }
 
@@ -56,13 +56,13 @@ function App() {
     <Fragment>
       <Header title='Clima React App' />
 
-      <div className="form-container">
-        <div className="row">
-          <div className="col m6 s12">
+      <div className='form-container'>
+        <div className='row'>
+          <div className='col m6 s12'>
             <Form search={search} setSearch={setSearch} setConsult={setConsult} />
           </div>
-          <div className="col m6 s12">
-            {error ? <Error text="Please enter a valid city" /> : <Weather result={result} />}
+          <div className='col m6 s12'>
+            {error ? <Error text='Please enter a valid city' /> : <Weather result={result} />}
           </div>
         </div>
       </div>
