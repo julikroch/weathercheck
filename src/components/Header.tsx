@@ -1,11 +1,11 @@
-interface HeaderProps {
+type HeaderProps = {
     title: string
 }
 
-const Header = (props: HeaderProps) => (
+const Header = ({ title }: HeaderProps) => (
     <nav>
         <div className="nav-wrapper light-blue darken-2">
-            <a href="#!" className="brand-logo">{props.title}</a>
+            <a href="#!" className="brand-logo">{title}</a>
         </div>
     </nav>
 )
